@@ -100,7 +100,7 @@ public final class Key {
   public static final Key PERCENT = create(0, '%', true);
   public static final Key TAB = create(KeyEvent.VK_TAB, '\u0009', true);
 
-  public static final Key ENTER = create(KeyEvent.VK_ENTER, '\r', false);
+  public static final Key ENTER = create(KeyEvent.VK_ENTER, '\n', false);
   public static final Key DELETE = create(KeyEvent.VK_DELETE, '\u007f', false);
   public static final Key BACKSPACE = create(KeyEvent.VK_BACK_SPACE, '\u0008', false);
   public static final Key UP = create(KeyEvent.VK_UP, '\u2191', false);
@@ -109,6 +109,7 @@ public final class Key {
   public static final Key RIGHT = create(KeyEvent.VK_RIGHT, '\u2192', false);
   public static final Key PAGE_DOWN = create(KeyEvent.VK_PAGE_DOWN, '\u21DF', false);
   public static final Key PAGE_UP = create(KeyEvent.VK_PAGE_UP, '\u21DE', false);
+  public static final Key HOME = create(KeyEvent.VK_HOME, null, false);
   public static final Key END = create(KeyEvent.VK_END, '\u0003', true);
   public static final Key ESCAPE = create(KeyEvent.VK_ESCAPE, '\u001B', false);
   public static final Key CONTROL = create(KeyEvent.VK_CONTROL, null, false);
