@@ -151,7 +151,7 @@ public abstract class ToolkitDelegate extends SunToolkit implements ComponentFac
 
   public Insets getScreenInsets(GraphicsConfiguration gc)
     throws HeadlessException {
-    return getUnderlyingToolkit().getScreenInsets(gc);
+    return new Insets(0, 0, 0, 0);
   }
 
   public DragSourceContextPeer createDragSourceContextPeer(DragGestureEvent dge)

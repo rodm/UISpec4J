@@ -25,8 +25,8 @@ public class UISpec4J {
     }
 
     // Black magic - do not touch this (system.setProperty seem to load dynamic libraries)
-    if ("Linux".equalsIgnoreCase(System.getProperty("os.name"))) {
-      System.setProperty("awt.toolkit", "sun.awt.motif.MToolkit");
+    if (System.getProperty("awt.toolkit") == null && "Linux".equalsIgnoreCase(System.getProperty("os.name"))) {
+      System.setProperty("awt.toolkit", "sun.awt.X11.XToolkit");
     }
     initToolkit();
     UISpecLF.init();

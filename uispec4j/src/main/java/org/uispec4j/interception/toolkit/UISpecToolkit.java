@@ -15,7 +15,7 @@ import java.awt.peer.*;
  */
 public class UISpecToolkit extends ToolkitDelegate {
   static final String SYSTEM_PROPERTY = "awt.toolkit";
-  static final String UNIX_SYSTEM_DEFAULT_VALUE = "sun.awt.motif.MToolkit";
+  static final String UNIX_SYSTEM_DEFAULT_VALUE = System.getProperty("awt.toolkit", "sun.awt.X11.XToolkit");
   static final String WINDOWS_SYSTEM_DEFAULT_VALUE = "sun.awt.windows.WToolkit";
 
   private static String awtToolkit;
@@ -127,9 +127,9 @@ public class UISpecToolkit extends ToolkitDelegate {
     try {
       underlyingToolkit = (Toolkit)Class.forName(awtToolkit).newInstance();
     }
-    catch (Exception e) {
+    catch (Throwable t) {
       throw new AWTError("Unable to load AWT Toolkit: " + awtToolkit + " - "
-                         + e.getLocalizedMessage());
+                         + t.getLocalizedMessage());
     }
   }
 
